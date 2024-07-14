@@ -15,3 +15,5 @@ EOF
 
 sysctl -p
 lsmod |grep bbr
+
+chsh -s /usr/bin/fish
