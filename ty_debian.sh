@@ -1,5 +1,5 @@
 sudo sed -i 's/deb.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list
-apt update -y && apt install screen fish -y
+apt update -y && apt install screen fish nano -y
 
 sed -i 's/^#NTP=.*/NTP=ntp.aliyun.com/g; s/^#FallbackNTP=.*/FallbackNTP=ntp1.aliyun.com ntp2.aliyun.com ntp3.aliyun.com ntp4.aliyun.com ntp5.aliyun.com ntp6.aliyun.com ntp7.aliyun.com/g' /etc/systemd/timesyncd.conf
 systemctl restart systemd-timesyncd.service
@@ -15,3 +15,5 @@ EOF
 
 sysctl -p
 lsmod |grep bbr
+
+chsh -s /usr/bin/fish
