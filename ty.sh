@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-sed -i '1iServer = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
+sed -i 'Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
 pacman -Sy base base-devel vim wget screen fish htop git pyenv btop --needed --noconfirm
 timedatectl set-ntp true
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
